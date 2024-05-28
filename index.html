@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/favicon-Dz-Dk7Qn.ico" type="image/x-icon">
+    <title>Youtube</title>
+
+  <link rel="stylesheet" crossorigin href="/assets/index-yxkDsZwF.css">
+</head>
+
+<body>
+    <div class="body">
+        <div class="flex items-center justify-between sm:mx-5 mx-3 mb-3 lg:mt-3  ">
+            <div class="flex items-center ">
+
+                <div id="hamburger" class=" lg:hidden cursor-pointer p-3">
+                    <span class="bar block w-5 h-[2px] m-1 bg-black"></span>
+                    <span class="bar block w-5 h-[2px] m-1 bg-black"></span>
+                    <span class="bar block w-5 h-[2px] m-1 bg-black"></span>
+                </div>
+
+                <div class="logo ">
+                    <img class="w-7 mr-1 ml-3 cursor-pointer" src="/assets/youtube_logo-removebg-preview-BfVriw5J.png" alt="">
+
+                </div>
+                <span class="youtube  font-bold text-xl font-sans cursor-pointer">Youtube </span><sup
+                    class="font-sans pk  m-1 text-slate-500 text-xs">PK</sup>
+
+            </div>
+
+            <div class="moblesearch hidden w-[60%]">
+                <input
+                    class="w-[100%] p-2 rounded-lg border border-slate-400 outline-blue-200 focus:shadow-inner focus:shadow-blue-400 "
+                    type="text" placeholder="Search..">
+
+            </div>
+
+            <div class="search flex items-center ">
+                <div id="lgsearch" class=" hidden sm:flex">
+                    <input
+                        class="border-slate-400 border pl-4 p-1 w-[40vw] rounded-l-2xl focus:border-blue-400 focus:outline-none focus:shadow-blue-100  focus:shadow-inner  "
+                        type="text" placeholder="Search"> <button
+                        class="p-1 rounded-r-2xl m-0 border border-slate-400 w-12 bg-[#f0f0f0] text-center flex justify-center"><img
+                            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='currentColor'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20clip-rule='evenodd'%20d='M16.296%2016.996a8%208%200%2011.707-.708l3.909%203.91-.707.707-3.909-3.909ZM18%2011a7%207%200%2011-14%200%207%207%200%200114%200Z'%20fill-rule='evenodd'%3e%3c/path%3e%3c/svg%3e" alt=""></button>
+                </div>
+
+                <div class="cancelsearch hidden">
+                    <img class="w-6" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20width='48'%20height='48'%20color='%23000000'%20fill='none'%3e%3cpath%20d='M19.0005%204.99988L5.00045%2018.9999M5.00045%204.99988L19.0005%2018.9999'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e" alt="">
+                </div>
+
+
+
+                <div class="responsivesearce flex items-center gap-6  sm:hidden">
+                    <button id="repsearch" class=" text-center flex justify-center"><img width="28"
+                            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='currentColor'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20clip-rule='evenodd'%20d='M16.296%2016.996a8%208%200%2011.707-.708l3.909%203.91-.707.707-3.909-3.909ZM18%2011a7%207%200%2011-14%200%207%207%200%200114%200Z'%20fill-rule='evenodd'%3e%3c/path%3e%3c/svg%3e" alt=""></button>
+                    <img class=" clicktosignup block w-7 cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAT7SURBVHic5ZtdiFVVFMd/d3LmVjeRErozgxFlZYU2I9aLVFppIdiDBCKaH0lIL5G+igh+QFNNn0QfFI1EgdAXvvpiEL3F1EzqqKSGkzj5FdnMOE56rw/rXOfcw7nn7n322udO+Yf1cjl3/f/rnH3OXnvttaGxaAqsYchlwNEGLAQeAu4DZgFFoADcFFxzERgBhoAjgfUD+4Lf/nPoBN4EDgJlRzsAdAMdmUaQAnngJeTJuQZdy/qADQHXpEEe2AScxF/gUfsD2Ai0ZBBfIp5AhmhWgUftCPCM9yhjcAvwuaVYn9aDfFQzwYPAfs8BpbFDyEzjFUuR6arRwdayYWCJr+CfB8YnQZD17F9gvWlQponQGmCXxfX1MAT8BPyJCG4HHkGSJg2UEc1faDhbiojUeDrfAfOpnf7OB75S4hpH4XXoQOedPwMssuBdhIwOjW/C7BRxAzLVHVIQMQjcnYL/ruC/rvwHSTlFaszzI8C8NOQBOoAxBR09tsSLFUjLwDZb4hhsVdLypClhHjisQPgXMDVl0GFMDXy56hnAcO2wSYGsjNIUFGCXkqZX6hHdiN6qbo1bzFVYp6RpkMhSOjofr0OSEg2cUPIDsurTwAxgbdIFmsUMzQrOXEVdP4cdh0dAJzBHUfQ0RV+3KvqqijN8A1YrkoBDBhaD+xV9QY1YB9AbZmUk79fCHmVtv0YJ2pQJyshiROODOgP9ZXgJKc1fewUWKgiNohnYoeBnZ+BLEzmCmCs3wFcp6QVgmcP/n0M3nwijKuZv0X8FKjaCrC1s8TR+y29fh8l8FznHgc2YDeVmYAt6RZha1h8mPe2ZrGLHkHz8jpjA70Q2O37LSMsQTNT4RpnYqMwKp5HcvAmZhVoz5h8FCjlgCjLcrkc0N3RvfjJgCnAZ2Z/3/QqcQ/b7e5Fa4ynkKw9Ss2tHegfmIXP0dM96RpHYAZ0KbJyNAJ8Bj2HXCdIEPI7U8nxNhVWNF9rT4BjSIFG0CLoWWoG30CmOhq1qGtRMhH5Af/UGsin7o6LOqkToVQWHJeBd5LviCzcAXQGXq96dYccrHJ1dRsppWWE9cMVR8/KwwzbS39USdepsnrAWN823Rx2m7eh6z098Rng/QVeS9cc5607h6Cxws4/IDFEAzsfoqmddcc46Ujjq9hKWHd7GXnfNemWfpaNnPQRki2XYae4N/zmanX1gSX7MXq86jlpenxhjHmlCNL2bnZbkPvAw5noHiWyQRkfAJeANC/J7UknWxUyLa19HqlOJaMF8j+AjS7E+8AlmWg9gUV1egFmSMUxMQpEhipivFo0bJCroMXT8pWMQaZEDdhtq/DQNQQHz7HA72Ry+qCCHLGZMtO3HIVmbjQxzE6Jv0OstSEI75sv3f5BltBOeQmYHE8Ix4GN0CiFRTEdSWNN3fhzFVvrV2K28/kYSjkdxezVygY8PgQsW/FeAlQ68sUjbLH0ceCcQdC/JNySHHKxaFfzn9xR8l7AI3vbpLEF6eV0OJ1xAirDnkfY3gNuQLpBW3FrrhpEN1b0OPuriAaTBwPbJ+LYBdFt8ElHAPE/wbSVknm9IXWIBjT0+cxjZRm8oWpAdX43OblM7AbyMfueIE/LIocZf8Bd4L/Aik+C8YD3MAV5DPpYuNfwSUsDsQrft7hqyyN+LTByenoXM80XkQEblwzWKTGHhw9N9wPdIH8H/Fg0/Pn8VSQtAe2qQXeoAAAAASUVORK5CYII=" alt="">
+
+                </div>
+
+                <div class="voice hidden md:block">
+                    <img class="w-8 ml-4 cursor-pointer " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAkhSURBVHic5ZtfcFTVHcc/v7sbdJhkCZAExwc1QO4upA1DCDK2UzZK7TjJjBRo1TBjCQRxJpQKrW0tvvXBmQpSDTOOGvkrgx1ajA+lD+0Mw8igE20GKWzcu7s2ojMKSQrYXQ2B3f31YWHzlyS7ezbR6efp3nPu+Z3vOXvP2XN+53eFPBOJRMri8fhyEakEfKpqi8hMESlW1UIAEYmp6hVVvSwiDhAUkYBlWSfnz5/fnU99kg+jjuMsBRpE5EFVrcyhHhWRgKr+XVXf9Pl8/zQoEzDYAeFw2KOqm1R1A7DAlN1hdIrIvmQy+arP54uaMJhzBwQCgVlut/spEdmiqjNNiBoPEbmsqi39/f0vVVVVXc7JVrYFVVVCodDjwE6gNBcROXBJVX/v9Xp3i0gyGwNZdUAkEpmfSCQOAN/LpnweOGVZ1rqKioqPMy2YcQc4jrMK2AsUZ1o2z0SBTV6v90+ZFLIm+qCqWqFQ6I/AW3zzGg9QBLzpOM4Lqjrhdk3oDQgEAtPcbvd+oCFLcZOKqh6OxWKNNTU118d7dtwOuNH4NqDOiLrJ41g0Gl01XieM+aqoqrjd7la+fY0HqC8qKjow3nAYMzMcDu8CfmZU1uTS4DjOH8Z64JZDIBgM/lREjphWFI/HaW9v5/Tp0/T29gJQUlJCdXU19957L26323SViMha27bfHDVvtMRwODwvmUx2ADNMCjl+/DjPPfccn3322aj5d911F9u3b+f+++83WS3AlyJSbdv2v4dnjBgCqirJZPIghht/8OBBmpubb9l4gE8//ZTm5mbeeOMNk1UDzFDV/ao64gcfkeA4zkag1WTt7777Lk1NTSSTE1utulwu9u3bx7Jly0zKAGj0er0HBicM6YAbGxsHKDFZ68qVKwkGgxmVWbhwIW1tbSZlAHRPmzbNW15efuVmwpAhUFBQsBXDjQ+FQhk3HqCzs5NIJGJSCkDZtWvXfjE4Id0B4XDYA/zcdI3nzp2bkrJj8FQwGCy6eZPugBvODOP7+cuXs9+uX7p0yaCSNLNE5ImbN4OHwLp81KaqWZed6KSZBU03LyxI+fBU9Tv5qu0byMJwOLwYBt6Ab8UuzySJRGItDHTAj6ZQy5QgIj8EsCKRSBmwcIr1TAWLHMcpseLx+HLydD7wDUdEZLklIv9Pk98QkslkpQV4p1rIVGFZltcSkQoTxq5du0Y8HjdhakwSiQTXr4/r6psQqmpbqprz2j8QCLBs2TL8fj8XL140oW1Uenp6qK2t5b777sNxHBMmSyxS7uSc6Ojo4Ouvv6a3t5cPPvjAgK7RaW9vp7u7m2g0Snt7uwmTRRZQmKuVmTMHthD5fAMuXLiQvp49e7YJk0UTPkAYi9LSgaPBwSIBioqyf8FmzBjqlBrcuYPrzAULiOVqxLZtLCvVl++9996QvPLy8qztDi976tQpIOUxsm07a7uDiFqkztRyYtasWVRVVQEQDoc5f/58Om/JkiWUlGQ+z5aWlrJ48eL0fVdXFx9/nDr7rKqqorjYyOlc1BKRXhOWHnjggfT166+/nr52uVxs3rw5Y3ubN2/G5XKl71tbB9yUK1asyFLlCHotVQ2ZsNTQ0JAe70ePHh3izmpoaOChhx6asK26ujoee+yx9H0oFOLtt98GwOPx8Oijj5qQDOBYgJE/VI/Hw7p1KZ9KIpFg69atfPXVVwCICLt27WLDhg1DftXhuFwuNm7cyM6dOxFJbU9isRjbtm0jkUgAsH79ejwejwnJiIgjoVBojar+xYTBq1ev8sgjj6QXKX6/n5aWFm6//fb0M11dXbS1tXH69Gl6enqA1Hivrq5m1apV3HPPPeln+/r62LJlCydPngTA5/Nx5MgRbrvtNhNyAVZLJBIpSyQSFzC0Izx//jyrV68mFkv9uSxYsICXX36ZO++8MyM73d3dNDc3c/bsWQCmT5/O0aNHmTt3rgmZAElgjjV//vxuEQmYsnr33XfzyiuvpOeDjz76iPr6enbv3s3Vq1fHLd/X10drayv19fXpxns8HlpbW002HuCM1+vtFQDHcXYB20xa7+zs5Mknn6S7eyDOsbi4mBUrVuD3+ykvL0//Pfb29tLV1cWJEyc4fvw4V66kzy2YM2cOr732Gj6fz6Q8VHWHz+f7jQAEg8EaETG+iI9Go7S0tHDo0KGMPbwiwsMPP8yzzz47YkVoAhFZbNv2h+lxHwqFzubLMxwIBDh8+DDHjh2jr69vzGenT59OXV0da9eupbKyMh9yADq9Xm8lDJr4QqHQ06q6I181QuovraOjg0AgwIkTJzhz5gwAixYtora2lsrKSpYsWUJhYc77s/H4ldfr3QWQjkZIJpOvWpa1PZ/RnoWFhfj9fvx+P7Nnz053wJo1a0wubsbjkqqml5Xp3aDP54uq6u7JUjFVqOqLg+OMh2yH+/v7XwR6Jl3V5HGxoKCgZXDCkICcqqqqy8Fg8BkR2WO01osX0/FAN/niiy+GXAcCQ5cipaWllJWVmZQB8Ot58+Z9OThhxOrvRhD0SeD7Jmp8//33aWxsTK/lJ4rL5eLAgQMsXbrUhAyAd2zbrhWRIae1IzxCIqKWZa0Dvhyelw2ffPJJxo2H1IZqsF8hR66IyPrhjYexw+R+IiJ/zrXm/v5+9uzZM8JVNh533HEHTU1NRjY+IrLGtu23Rs0bq6DjOC8Av8xZwRQiIs/btv3bW+aPVfjGfLAXaDQtbDJQ1cNer/fxsT6mGNMrLCIajUY3AX8zri7//DUWizWO9yXJuG7xmpqa659//vlKEdlrTlveORSNRlcbCZe/iaqK4zjPi8jTuWnLKyoiOyoqKp4ZbcYfjWw+mfmxiOydrC/EMuC/qvqEz+fLKMA7KzdYKBSaq6r7gR9kUz4PvKOqjT6fryvTgiY+m9sBGF+zTpBLIvK7ioqK1om+8sPJ2RHa1dVVfCP89ClgVq72Jsh/VPWlgoKCluFr+0wxFhsUCAQK3W73JmADkBdXjoicU9W98Xi8tbKyMuczTchTcFQ4HF6cSCTWisiDwHfJ4PO8YSSBf6nqPyzLOmzb9ofmVKbIe3SY4zglIrIcWJhMJheIiE1qqBQzEJsQA66QGtMOEFTVAHDS6/UaObu8Ff8DwzVoS+pKpw8AAAAASUVORK5CYII=" alt="">
+
+
+                </div>
+
+
+            </div>
+
+            <div class=" items-center gap-6 hidden md:flex ">
+                <img class="w-7 cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASASURBVHic7ZtdiFVVFMd/9zp+TOOgTpNRajoqJoSjmQoKpYIP9tBbFupD4IOIYQRBDGFv0YP0ENSDyEgKkr6IUjHqODg4GtRLWGl+YBOp+EF+1MzYYOrcHvY+7TXD3XfmbPfe54zNHw5ncfdea/33Ovecvc7e60B8FID1QAfQo4/jwFrd9lhjFPAlULIce3SfxxYfYgZ7Hzipj/vi962ZsQuMaqALNcguYLFoWwJ067a/gHHR2UXAK5ir/FGZ9o9F+8uxSBVjOQKeEvLPZdp/EvLkwFz+Q8wASF99ZdofWvoGRcwA5BJVEX1NFfI2YDtQi7rne1APxgRTIvIKimpgM3AK+9xvO34ANjFMZ4QCsAG4RvnBXQbagYP6aAeuWPpeBd5iGGWJz6IGJAfRC+wF1gHTKug+h0qT92kdaaMNeCYYa09YAtzAkH4ANON2Tz8NfALcE/auA4u8MA2A5ZhsrgR8D7zgwe5c4EdhtxuVVOUKC1ApbEKyGRjj0f544ICw/ycw36P9R8JEoBND7lPCPLCKqKkz8fMrMCGAn9TYgyG1l7BP6yrgqPC3O6CvIWElhswF1F81NOpQV7+ESqkzfR6cwATgtYh+Vwm/30b02w/LBIkTGfg/JPwvzcA/OwSBFRn4XyH8b4/tvAj8oZ1fJJs0tYCZfW64cnB9HZ4H1Gv5a00iNkrAN1qerDmlhmsAFgo5i/s/QYeQF1p7VYBrAJ4X8i+ONnxA+p7jYsA1APVCvupowwek73prrwpwDYBMeO462vCBbiHXuhhwDYDUe2jtFR7St9OO0v9+UXQkAFkTyBojAciaQNYYCYCjXh7X6KO+DNXoc5ZJUIJefa52UXYNQLIY2VWxVxwkHJwWSF0D0KDP1xz1fSLh0FCxlwUuAZiE2aLK8k0wwRl9noJaok8FlwDIVdhTDvq+ITmkLq1xCcCrQm510PeNNiGvDu2sGriFWo76nXxMhwXM1vpNUtYTpP0HvIHamAC1K5PFWuBAlIBdWn4SxTEIxqBWgJMix+mhHDlgBqbY8gIwOoST9zDr8DtCOHhENGP4vevb+Fzgb0xBUx6LmKaiMtOSPjstkpZDLf0LFN72ZTgA3sHwPIOH7fOxwBFhtJV8PPltKNJ/+/wwagxOqBlg7BwqC8w76oDzGN5HMS9vQ0YV0CKMXAJm+eMYHLNRpXgJ/xZSFoW+KZQ7gZmeCcbAdNSUmIxjTRplufXd6J1aPDQyyBa6LROUGV6eH3qDQXIvm7Xa7otWYKOWj6E+anqQ0nkRUyd42kYgoP5o+r+5ttk62pwfJn2Bc16PQ1j+ybb9tBKwH1WFNQ2VUAy3W6EP+A34DNiCeleIigbMFdjpoP+F0M/Ti1cqnEMN4Dbp0tJJwB2tm4dlN2d8gLmKn6fQkyWxTQF4RUMNqoojGcz7Q9BpEv2vAE8EYxcJy4F/MIP6ivKV3gtQVV9Jv3tE/H4wNNZg1hNkit2ij84BbXeB1zNhGhAvoT6iGGzO/g54MSOOwVFALavvBM6iipy6tdys26LmG/8CfnF2fQBsgtwAAAAASUVORK5CYII=" alt="">
+                <img class=" clicktosignup block w-7 cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAT7SURBVHic5ZtdiFVVFMd/d3LmVjeRErozgxFlZYU2I9aLVFppIdiDBCKaH0lIL5G+igh+QFNNn0QfFI1EgdAXvvpiEL3F1EzqqKSGkzj5FdnMOE56rw/rXOfcw7nn7n322udO+Yf1cjl3/f/rnH3OXnvttaGxaAqsYchlwNEGLAQeAu4DZgFFoADcFFxzERgBhoAjgfUD+4Lf/nPoBN4EDgJlRzsAdAMdmUaQAnngJeTJuQZdy/qADQHXpEEe2AScxF/gUfsD2Ai0ZBBfIp5AhmhWgUftCPCM9yhjcAvwuaVYn9aDfFQzwYPAfs8BpbFDyEzjFUuR6arRwdayYWCJr+CfB8YnQZD17F9gvWlQponQGmCXxfX1MAT8BPyJCG4HHkGSJg2UEc1faDhbiojUeDrfAfOpnf7OB75S4hpH4XXoQOedPwMssuBdhIwOjW/C7BRxAzLVHVIQMQjcnYL/ruC/rvwHSTlFaszzI8C8NOQBOoAxBR09tsSLFUjLwDZb4hhsVdLypClhHjisQPgXMDVl0GFMDXy56hnAcO2wSYGsjNIUFGCXkqZX6hHdiN6qbo1bzFVYp6RpkMhSOjofr0OSEg2cUPIDsurTwAxgbdIFmsUMzQrOXEVdP4cdh0dAJzBHUfQ0RV+3KvqqijN8A1YrkoBDBhaD+xV9QY1YB9AbZmUk79fCHmVtv0YJ2pQJyshiROODOgP9ZXgJKc1fewUWKgiNohnYoeBnZ+BLEzmCmCs3wFcp6QVgmcP/n0M3nwijKuZv0X8FKjaCrC1s8TR+y29fh8l8FznHgc2YDeVmYAt6RZha1h8mPe2ZrGLHkHz8jpjA70Q2O37LSMsQTNT4RpnYqMwKp5HcvAmZhVoz5h8FCjlgCjLcrkc0N3RvfjJgCnAZ2Z/3/QqcQ/b7e5Fa4ynkKw9Ss2tHegfmIXP0dM96RpHYAZ0KbJyNAJ8Bj2HXCdIEPI7U8nxNhVWNF9rT4BjSIFG0CLoWWoG30CmOhq1qGtRMhH5Af/UGsin7o6LOqkToVQWHJeBd5LviCzcAXQGXq96dYccrHJ1dRsppWWE9cMVR8/KwwzbS39USdepsnrAWN823Rx2m7eh6z098Rng/QVeS9cc5607h6Cxws4/IDFEAzsfoqmddcc46Ujjq9hKWHd7GXnfNemWfpaNnPQRki2XYae4N/zmanX1gSX7MXq86jlpenxhjHmlCNL2bnZbkPvAw5noHiWyQRkfAJeANC/J7UknWxUyLa19HqlOJaMF8j+AjS7E+8AlmWg9gUV1egFmSMUxMQpEhipivFo0bJCroMXT8pWMQaZEDdhtq/DQNQQHz7HA72Ry+qCCHLGZMtO3HIVmbjQxzE6Jv0OstSEI75sv3f5BltBOeQmYHE8Ix4GN0CiFRTEdSWNN3fhzFVvrV2K28/kYSjkdxezVygY8PgQsW/FeAlQ68sUjbLH0ceCcQdC/JNySHHKxaFfzn9xR8l7AI3vbpLEF6eV0OJ1xAirDnkfY3gNuQLpBW3FrrhpEN1b0OPuriAaTBwPbJ+LYBdFt8ElHAPE/wbSVknm9IXWIBjT0+cxjZRm8oWpAdX43OblM7AbyMfueIE/LIocZf8Bd4L/Aik+C8YD3MAV5DPpYuNfwSUsDsQrft7hqyyN+LTByenoXM80XkQEblwzWKTGHhw9N9wPdIH8H/Fg0/Pn8VSQtAe2qQXeoAAAAASUVORK5CYII=" alt="">
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <main>
+            <div id="mainhomecantainer" class="cantainer      flex">
+
+
+                <div id="respbox"
+                    class=" lg:hidden hidden sm:block sm:w-[12vw]      md:w-[10vw]   responsiveleftsection h-[80vh]  border-r">
+
+                    <div
+                        class=" hover:bg-[#f2f2f2] movetohome  cursor-pointer rounded-lg h-14 p-1 mt-6 home flex items-center flex-col">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cg%3e%3cpath%20d='M4%2021V10.08l8-6.96%208%206.96V21h-6v-6h-4v6H4z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <span class="text-xs font-semibold">Home</span>
+                    </div>
+
+                    <div
+                        class=" viewHistory hover:bg-[#f2f2f2] cursor-pointer rounded-lg h-14 p-1 mt-6 home flex items-center flex-col">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%3e%3cg%3e%3cpath%20d='M14.97%2016.95%2010%2013.87V7h2v5.76l4.03%202.49-1.06%201.7zM22%2012c0%205.51-4.49%2010-10%2010S2%2017.51%202%2012h1c0%204.96%204.04%209%209%209s9-4.04%209-9-4.04-9-9-9C8.81%203%205.92%204.64%204.28%207.38c-.11.18-.22.37-.31.56L3.94%208H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22%203.86%208.51%202%2012%202c5.51%200%2010%204.49%2010%2010z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <span class="text-xs font-semibold">History</span>
+                    </div>
+
+
+                    <div
+                        class=" subcribecheck  hover:bg-[#f2f2f2] cursor-pointer rounded-lg h-14 p-1 mt-6 home flex items-center flex-col">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M10%2018v-6l5%203-5%203zm7-15H7v1h10V3zm3%203H4v1h16V6zm2%203H2v12h20V9zM3%2010h18v10H3V10z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class="text-xs font-semibold">subscriptions</span>
+                    </div>
+
+                    <div
+                        class=" hover:bg-[#f2f2f2] youchannelsection cursor-pointer rounded-lg h-14 p-1 mt-6 home flex items-center flex-col">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='m10%208%206%204-6%204V8zm11-5v18H3V3h18zm-1%201H4v16h16V4z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class="text-xs font-semibold">you</span>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <div
+                    class="  hidden lg:block   leftsection w-[17vw] h-[90vh]  border p-2 overflow-auto overflow-y-scroll  scrollbar scrollbar-thin scrollbar-hidden group-hover:scrollbar-visible ">
+
+                    <div id=""
+                        class="home movetohome   rounded-lg  hover:bg-[#f2f2f2] cursor-pointer w-full h-12 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cg%3e%3cpath%20d='M4%2021V10.08l8-6.96%208%206.96V21h-6v-6h-4v6H4z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs  font-semibold cursor-pointer">Home</span>
+                    </div>
+
+
+                    <div
+                        class="home  rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center  space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M10%2014.65v-5.3L15%2012l-5%202.65zm7.77-4.33-1.2-.5L18%209.06c1.84-.96%202.53-3.23%201.56-5.06s-3.24-2.53-5.07-1.56L6%206.94c-1.29.68-2.07%202.04-2%203.49.07%201.42.93%202.67%202.22%203.25.03.01%201.2.5%201.2.5L6%2014.93c-1.83.97-2.53%203.24-1.56%205.07.97%201.83%203.24%202.53%205.07%201.56l8.5-4.5c1.29-.68%202.06-2.04%201.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23%205.86-8.5%204.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01%201.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06%201.46-2.56l8.5-4.5c1.34-.71%203.01-.2%203.72%201.14.71%201.34.2%203.01-1.14%203.72L15.5%209.26v1.21l1.8.74c.99.41%201.65%201.35%201.7%202.41.05%201.06-.52%202.06-1.46%202.56z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Shorts</span>
+                    </div>
+
+
+                    <div
+                        class="home subcribecheck  rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center mb-4  space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M10%2018v-6l5%203-5%203zm7-15H7v1h10V3zm3%203H4v1h16V6zm2%203H2v12h20V9zM3%2010h18v10H3V10z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">subscriptions</span>
+                    </div>
+
+                    <hr class="bg-slate-400 m-auto w-[90%]">
+
+
+                    <div class="youSection">
+                        <div class="you mt-3 mb-3">
+                            <span class="font-semibold p-4">You ></span>
+                        </div>
+
+                        <div
+                            class="home youchannelsection rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M4%2020h14v1H3V6h1v14zM6%203v15h15V3H6zm2.02%2014c.36-2.13%201.93-4.1%205.48-4.1s5.12%201.97%205.48%204.1H8.02zM11%208.5a2.5%202.5%200%20015%200%202.5%202.5%200%2001-5%200zm3.21%203.43A3.507%203.507%200%200017%208.5C17%206.57%2015.43%205%2013.5%205S10%206.57%2010%208.5c0%201.69%201.2%203.1%202.79%203.43-3.48.26-5.4%202.42-5.78%205.07H7V4h13v13h-.01c-.38-2.65-2.31-4.81-5.78-5.07z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Your Channel </span>
+                        </div>
+                        <div id=""
+                            class="home rounded-lg viewHistory hover:bg-[#f2f2f2] cursor-pointer  w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%3e%3cg%3e%3cpath%20d='M14.97%2016.95%2010%2013.87V7h2v5.76l4.03%202.49-1.06%201.7zM22%2012c0%205.51-4.49%2010-10%2010S2%2017.51%202%2012h1c0%204.96%204.04%209%209%209s9-4.04%209-9-4.04-9-9-9C8.81%203%205.92%204.64%204.28%207.38c-.11.18-.22.37-.31.56L3.94%208H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22%203.86%208.51%202%2012%202c5.51%200%2010%204.49%2010%2010z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">History</span>
+                        </div>
+                        <div
+                            class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M22%207H2v1h20V7zm-9%205H2v-1h11v1zm0%204H2v-1h11v1zm2%203v-8l7%204-7%204z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Playlists</span>
+                        </div>
+
+                        <div
+                            class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='m10%208%206%204-6%204V8zm11-5v18H3V3h18zm-1%201H4v16h16V4z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Your Videos</span>
+                        </div>
+
+                        <div
+                            class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M14.97%2016.95%2010%2013.87V7h2v5.76l4.03%202.49-1.06%201.7zM12%203c-4.96%200-9%204.04-9%209s4.04%209%209%209%209-4.04%209-9-4.04-9-9-9m0-1c5.52%200%2010%204.48%2010%2010s-4.48%2010-10%2010S2%2017.52%202%2012%206.48%202%2012%202z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Watch later</span>
+                        </div>
+
+                        <div
+                            class=" mb-4 home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43%20c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z%20M7,20H4v-8h3V20z%20M19.98,13.17l-1.34,6%20C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3%20c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Liked Videos</span>
+                        </div>
+
+                    </div>
+
+                    <hr class="bg-slate-400 m-auto w-[90%]">
+
+
+                    <div class="subscriptionsection">
+                        <div class="you mt-3 mb-3">
+                            <span class="font-semibold p-4">Subscriptions</span>
+                        </div>
+
+                        <div
+                            class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M14.97%2016.95%2010%2013.87V7h2v5.76l4.03%202.49-1.06%201.7zM12%203c-4.96%200-9%204.04-9%209s4.04%209%209%209%209-4.04%209-9-4.04-9-9-9m0-1c5.52%200%2010%204.48%2010%2010s-4.48%2010-10%2010S2%2017.52%202%2012%206.48%202%2012%202z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Watch later</span>
+                        </div>
+
+                        <div
+                            class=" mb-4 home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                            <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43%20c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z%20M7,20H4v-8h3V20z%20M19.98,13.17l-1.34,6%20C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3%20c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                            <span class=" text-xs font-semibold cursor-pointer">Liked Videos</span>
+                        </div>
+
+
+                    </div>
+
+
+                    <hr class="bg-slate-400 m-auto w-[90%]">
+
+
+
+                    <div class="you mt-3 mb-3">
+                        <span class="font-semibold p-4">Explore</span>
+                    </div>
+
+
+                    <div
+                        class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M19%203.87v9.77C19%2017.7%2015.86%2021%2012%2021s-7-3.3-7-7.37v-.13c0-1.06.22-2.13.62-3.09.5-1.19%201.29-2.21%202.27-2.97.85-.66%201.83-1.14%202.87-1.65.39-.19.77-.38%201.15-.58.36-.19.72-.38%201.08-.56v3.22l1.55-1.04L19%203.87M20%202l-6%204V3c-.85.44-1.7.88-2.55%201.33-1.41.74-2.9%201.34-4.17%202.32-1.13.87-2.02%202.05-2.58%203.37-.46%201.09-.7%202.29-.7%203.48v.14C4%2018.26%207.58%2022%2012%2022s8-3.74%208-8.36V2zM9.45%2012.89%2014%2010v5.7c0%201.82-1.34%203.3-3%203.3s-3-1.47-3-3.3c0-1.19.58-2.23%201.45-2.81z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer"> Trending</span>
+                    </div>
+
+                    <div
+                        class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M12%204v9.38c-.73-.84-1.8-1.38-3-1.38-2.21%200-4%201.79-4%204s1.79%204%204%204%204-1.79%204-4V8h6V4h-7zM9%2019c-1.66%200-3-1.34-3-3s1.34-3%203-3%203%201.34%203%203-1.34%203-3%203zm9-12h-5V5h5v2z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Music</span>
+                    </div>
+
+                    <div
+                        class=" mb-4 home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M10%2012H8v2H6v-2H4v-2h2V8h2v2h2v2zm7%20.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5%201.5.67%201.5%201.5%201.5%201.5-.67%201.5-1.5zm3-3c0-.83-.67-1.5-1.5-1.5S17%208.67%2017%209.5s.67%201.5%201.5%201.5%201.5-.67%201.5-1.5zm-3.03-4.35-4.5%202.53-.49.27-.49-.27-4.5-2.53L3%207.39v6.43l8.98%205.04%208.98-5.04V7.39l-3.99-2.24m0-1.15%204.99%202.8v7.6L11.98%2020%202%2014.4V6.8L6.99%204l4.99%202.8L16.97%204z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Gaming</span>
+                    </div>
+
+
+                    <hr class="bg-slate-400 m-auto w-[90%]">
+
+
+
+                    <div
+                        class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M12%209.5c1.38%200%202.5%201.12%202.5%202.5s-1.12%202.5-2.5%202.5-2.5-1.12-2.5-2.5%201.12-2.5%202.5-2.5m0-1c-1.93%200-3.5%201.57-3.5%203.5s1.57%203.5%203.5%203.5%203.5-1.57%203.5-3.5-1.57-3.5-3.5-3.5zM13.22%203l.55%202.2.13.51.5.18c.61.23%201.19.56%201.72.98l.4.32.5-.14%202.17-.62%201.22%202.11-1.63%201.59-.37.36.08.51c.05.32.08.64.08.98s-.03.66-.08.98l-.08.51.37.36%201.63%201.59-1.22%202.11-2.17-.62-.5-.14-.4.32c-.53.43-1.11.76-1.72.98l-.5.18-.13.51-.55%202.24h-2.44l-.55-2.2-.13-.51-.5-.18c-.6-.23-1.18-.56-1.72-.99l-.4-.32-.5.14-2.17.62-1.21-2.12%201.63-1.59.37-.36-.08-.51c-.05-.32-.08-.65-.08-.98s.03-.66.08-.98l.08-.51-.37-.36L3.6%208.56l1.22-2.11%202.17.62.5.14.4-.32c.53-.44%201.11-.77%201.72-.99l.5-.18.13-.51.54-2.21h2.44M14%202h-4l-.74%202.96c-.73.27-1.4.66-2%201.14l-2.92-.83-2%203.46%202.19%202.13c-.06.37-.09.75-.09%201.14s.03.77.09%201.14l-2.19%202.13%202%203.46%202.92-.83c.6.48%201.27.87%202%201.14L10%2022h4l.74-2.96c.73-.27%201.4-.66%202-1.14l2.92.83%202-3.46-2.19-2.13c.06-.37.09-.75.09-1.14s-.03-.77-.09-1.14l2.19-2.13-2-3.46-2.92.83c-.6-.48-1.27-.87-2-1.14L14%202z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Settings</span>
+                    </div>
+
+                    <div
+                        class="home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M13%2014h-2v-2h2v2zm0-9h-2v6h2V5zm6-2H5v16.59l3.29-3.29.3-.3H19V3m1-1v15H9l-5%205V2h16z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Send Feed Back</span>
+                    </div>
+
+                    <div
+                        class=" mb-4 home rounded-lg hover:bg-[#f2f2f2] cursor-pointer w-full h-10 p-4 flex items-center   space-x-4">
+                        <img class=" cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M15.36%209.96c0%201.09-.67%201.67-1.31%202.24-.53.47-1.03.9-1.16%201.6l-.04.2H11.1l.03-.28c.14-1.17.8-1.76%201.47-2.27.52-.4%201.01-.77%201.01-1.49%200-.51-.23-.97-.63-1.29-.4-.31-.92-.42-1.42-.29-.59.15-1.05.67-1.19%201.34l-.05.28H8.57l.06-.42c.2-1.4%201.15-2.53%202.42-2.87%201.05-.29%202.14-.08%202.98.57.85.64%201.33%201.62%201.33%202.68zM12%2018c.55%200%201-.45%201-1s-.45-1-1-1-1%20.45-1%201%20.45%201%201%201zm0-15c-4.96%200-9%204.04-9%209s4.04%209%209%209%209-4.04%209-9-4.04-9-9-9m0-1c5.52%200%2010%204.48%2010%2010s-4.48%2010-10%2010S2%2017.52%202%2012%206.48%202%2012%202z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                        <span class=" text-xs font-semibold cursor-pointer">Help</span>
+                    </div>
+
+
+                    <hr class="bg-slate-400 m-auto w-[90%]">
+
+
+                    <div class="you mt-3 ml-4">
+                        <span class="text-xs text-slate-500">© 2024 Google LLC</span>
+                        <p class="text-xs text-slate-500"> Powered by "Burhan Bugs"</p>
+                    </div>
+
+
+                </div>
+
+                <div id="subsections" class="hidden ml-5  ">
+                    <div class=" showsubscriber flex items-center w-[80vw] justify-center  lg:w-[70vw] h-[70vh] ">
+                        <p class="text-center  text-xl sm:text-2xl  text-slate-400 font-mono ">
+
+                            Please <b class="cursor-pointer underline clicktosignup">sign up </b> for full access to
+                            Youtube <sup class="text-slate-400 text-xs">(Powered by Burhan-Bugs)</sup>
+
+                            like subcribe your favourite channels, save your liked video, and More..
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="yourchannel border hidden  ml-14 p-6 w-[70vw]  items-center justify-center h-[80vh] ">
+
+                    <p class="requesttosignup clicktosignup  underline font-mono font-semibold cursor-pointer">
+
+                        Please sign up for full access
+                        
+                    </p>
+
+                   <p class="Congratulate text-sm font-mono font-semibold sm:text-xl">
+                    
+                   </p>
+
+                   <p class="congratulation text-sm text-center underline mt-32 sm:text-xl text-red-400">
+
+                   </p>
+                </div>
+
+
+                <div id="rightbox"
+                    class="rightsection w-[100vw]     h-[90vh] border  p-6   md:w-[100vw] sm:w-[100vw] overflow-y-scroll  scrollbar scrollbar-thin scrollbar-hidden group-hover:scrollbar-visible">
+
+                    <div class="videos flex gap-8 flex-wrap  justify-center md:justify-start">
+                        <div id="video1" class="videoboxes rounded-lg overflow-hidden border   w-80 h-64  ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Safar [slowed and reverb]@slowed and reverb.mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo  rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt text-sm font-semibold cursor-pointer ">
+
+                                        Safar [slowed and reverb]@slowed and reverb
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div id="video2" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Aaj Ro Len De - Slowed & Reverb _Shaarib Sabri - Play Bass.mp4"></video>
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class=" titletxt text-sm font-semibold cursor-pointer ">
+
+                                        Aaj Ro Len De - Slowed & Reverb |Shaarib Sabri - Play Bass
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="video3" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Tujhe Sochta Hoon [Slowed + Reverb + Rain] K.K _ Wormono lofi.mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt text-sm font-semibold cursor-pointer ">
+
+                                        Tujhe Sochta Hoon [Slowed + Reverb + Rain] K.K | Wormono lofi
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div id="video4" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/videoplayback (1).mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt text-sm font-semibold cursor-pointer ">
+
+                                        Shubh - MVP (Official Music Video)
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div id="video5" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Judaai [ Slowed and reverb ] stvrlightt.mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt font-semibold text-sm cursor-pointer ">
+
+                                        Judaai [ Slowed and reverb ] stvrlightt
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                       
+
+                        <div id="video7" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg " src="songs/harry.mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt font-semibold text-sm cursor-pointer ">
+
+                                        This is How Hackers Crack Passwords! (Don't Try)
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        
+
+
+                        
+
+
+
+                        
+
+
+                        <div id="video11" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Aram Ata Hai Deedar Se Tere (Ek Lamha) Slowed + Reverb _ Lyrics @Azaan sami khan.mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt font-semibold text-sm cursor-pointer ">
+
+                                        Aram Ata Hai Deedar Se Tere (Ek Lamha) Slowed + Reverb
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        
+
+                        <div id="video13" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/videoplayback (2).mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt font-semibold text-sm cursor-pointer ">
+
+                                        Maine Tera Naam Dil Rakh Diya [Slowed + Reverb]
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                         <div id="video13" class="videoboxes rounded-lg overflow-hidden   w-80 h-64 border ">
+
+                            <video class=" w-full hoverPlay cursor-pointer rounded-lg "
+                                src="songs/Shubh - Safety Off (Official Music Video).mp4"></video>
+
+                            <div class="flex items-center space-x-3 mt-1 ">
+
+                                <div class="logo rounded-full overflow-hidden w-10 h-9 ml-1 ">
+                                    <img class="cursor-pointer w-9 object-cover " src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+                                </div>
+                                <div>
+                                    <p class="titletxt font-semibold text-sm cursor-pointer ">
+
+                                        Maine Tera Naam Dil Rakh Diya [Slowed + Reverb]
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div id="historySection"
+                    class="rightsection w-[100vw] hidden     h-[90vh] border  p-6   md:w-[100vw] sm:w-[100vw] overflow-y-scroll  scrollbar scrollbar-thin scrollbar-hidden group-hover:scrollbar-visible">
+
+
+                    <div class="historytxt flex items-center justify-center w-full h-[70vh] ">
+                        <p class="text-center  text-xl sm:text-2xl  text-slate-400 font-mono underline">
+                            you have no any hostory Yet!
+                        </p>
+                    </div>
+
+
+
+
+
+                    <div id="addvideotoHis"
+                        class="videos  flex gap-8 flex-wrap  mt-12  justify-center md:justify-start">
+
+
+                    </div>
+
+
+
+                    <div class="clearhistory mt-6">
+                        <p
+                            class="text-center hidden clearurhist  text-md sm:text-xl  text-slate-500 cursor-pointer underline">
+                            Clear History
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="videoPlaysection  hidden     lg:pl-24 pt-4 border    w-[100vw] h-[90vh]  ">
+
+                <div
+                    class="back left-2 lg:left-7  w-9  z-30 absolute lg:w-14 cursor-pointer lg:p-2 lg:h-14 lg:hover:bg-slate-200 rounded-full lg:border">
+                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20width='48'%20height='48'%20color='%23000000'%20fill='none'%3e%3cpath%20d='M4%2012L20%2012'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3cpath%20d='M8.99996%2017C8.99996%2017%204.00001%2013.3176%204%2012C3.99999%2010.6824%209%207%209%207'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e" alt="">
+
+                </div>
+
+
+                <div
+                    class="leftsection   flex-col  lg:flex-row  w-[100vw]  flex gap-6 lg:w-full h-[87vh]    overflow-y-scroll  scrollbar scrollbar-thin scrollbar-hidden group-hover:scrollbar-visible  ">
+
+                    <div>
+
+                        <div
+                            class="playingvideo w-[100vw] sticky top-0 z-20 lg:static border  lg:w-[55vw] overflow-hidden rounded-lg ">
+                            <video
+                                src="songs/BEAT MAKING Session _ Episode - 17 _ Romantic Beat without Piano Roll - Dev Next Level.mp4"></video>
+
+
+                        </div>
+
+                        <div id="titlesection" class=" text-lg  p-1  font-semibold  w-[50vw]border h-10">
+
+                        </div>
+
+                        <div class="subscribelikebox flex w-[100vw]    justify-between items-center  lg:w-[55vw] h-24">
+
+                            <div class="flex items-center gap-1 ml-6 lg:ml-0">
+                                <div class="subbox w-14 h-14 overflow-hidden rounded-full   border border-red-400 ">
+                                    <img src="/assets/channel%20logo-CQJTmSvN.jpeg" alt="">
+
+
+
+                                </div>
+                                <div class="viewsub ">
+
+                                    <p class="text-black text-xs font-semibold cursor-pointer m-0 sm:text-lg ">Burhan
+                                        Bugs
+                                    </p>
+                                    <p class="text-slate-400 m-0 text-[9px] sm:text-xs ">1M subscribers</p>
+                                </div>
+
+                                <div
+                                    class="subchannel text-[9px]  ml-4 uppercase p-2 sm:text-xs cursor-pointer font-semibold bg-black text-white rounded-2xl">
+                                    subscribe
+                                </div>
+
+                            </div>
+
+                            <div class="likedislike mr-6 lg:mr-0 flex items-center">
+                                <div
+                                    class="like p-1 sm:p-2 rounded-l-2xl border  hover:bg-slate-800 border-l-slate-400 bg-black">
+                                    <img class="invert ml-2 cursor-pointer" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20enable-background='new%200%200%2024%2024'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20focusable='false'%20style='pointer-events:%20none;%20display:%20inherit;%20width:%20100%25;%20height:%20100%25;'%3e%3cpath%20d='M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43%20c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z%20M7,20H4v-8h3V20z%20M19.98,13.17l-1.34,6%20C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3%20c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                                </div>
+                                <div class="dislike p-1 sm:p-2 rounded-r-2xl bg-black hover:bg-slate-800 ">
+                                    <img class="w-6 mr-2 invert cursor-pointer"
+                                        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20width='48'%20height='48'%20color='%23000000'%20fill='none'%3e%3cpath%20d='M2%2011.5C2%2012.6046%202.89543%2013.5%204%2013.5C5.65685%2013.5%207%2012.1569%207%2010.5V6.5C7%204.84315%205.65685%203.5%204%203.5C2.89543%203.5%202%204.39543%202%205.5V11.5Z'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3cpath%20d='M15.4787%2016.1937L15.2124%2015.3337C14.9942%2014.6289%2014.8851%2014.2765%2014.969%2013.9982C15.0369%2013.7731%2015.1859%2013.579%2015.389%2013.4513C15.64%2013.2935%2016.0197%2013.2935%2016.7791%2013.2935H17.1831C19.7532%2013.2935%2021.0382%2013.2935%2021.6452%2012.5327C21.7145%2012.4458%2021.7762%2012.3533%2021.8296%2012.2563C22.2965%2011.4079%2021.7657%2010.2649%2020.704%207.9789C19.7297%205.88111%2019.2425%204.83222%2018.338%204.21485C18.2505%204.15508%2018.1605%204.0987%2018.0683%204.04586C17.116%203.5%2015.9362%203.5%2013.5764%203.5H13.0646C10.2057%203.5%208.77628%203.5%207.88814%204.36053C7%205.22106%207%206.60607%207%209.37607V10.3497C7%2011.8054%207%2012.5332%207.25834%2013.1994C7.51668%2013.8656%208.01135%2014.4134%209.00069%2015.5089L13.0921%2020.0394C13.1947%2020.1531%2013.246%2020.2099%2013.2913%2020.2493C13.7135%2020.6167%2014.3652%2020.5754%2014.7344%2020.1577C14.774%2020.1129%2014.8172%2020.0501%2014.9036%2019.9245C15.0388%2019.728%2015.1064%2019.6297%2015.1654%2019.5323C15.6928%2018.6609%2015.8524%2017.6256%2015.6108%2016.6429C15.5838%2016.5331%2015.5488%2016.4199%2015.4787%2016.1937Z'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e" alt="">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="commentsection mt-9">
+
+                            <input class=" ml-12 focus:outline-none w-[80%] h-12 " type="text"
+                                placeholder="add a Comment...">
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div
+                        class="relatedvideosection border-white w-[100vw]  lg:w-[30vw] h-[87vh] border  rounded-xl    ">
+                        <div
+                            class="relatedvideos  flex border p-5 cursor-pointer rounded-lg    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill " src="songs/harry.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]   ">
+                                This is How Hackers Crack Passwords! (Don't Try)
+                            </div>
+
+                        </div>
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg relatvideo w-full object-fill "
+                                    src="songs/Judaai [ Slowed and reverb ] stvrlightt.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Judaai [ Slowed and reverb ] stvrlightt
+                            </div>
+
+                        </div>
+
+
+                      
+
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/Aaj Ro Len De - Slowed & Reverb _Shaarib Sabri - Play Bass.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Aaj Ro Len De - Slowed & Reverb
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg relatvideo w-full object-fill "
+                                    src="songs/Aram Ata Hai Deedar Se Tere (Ek Lamha) Slowed + Reverb _ Lyrics @Azaan sami khan.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Aram Ata Hai Deedar Se Tere (Ek Lamha) Slowed + Reverb
+                            </div>
+
+                        </div>
+
+
+
+                        
+
+
+
+                        
+
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/Safar [slowed and reverb]@slowed and reverb.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl 2xl:text-[16px]">
+                                Safar [slowed and reverb]@slowed and reverb
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/Tujhe Sochta Hoon [Slowed + Reverb + Rain] K.K _ Wormono lofi.mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Tujhe Sochta Hoon [Slowed + Reverb + Rain] K.K | Wormono lofi
+                            </div>
+
+                        </div>
+
+
+                       
+
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/videoplayback (1).mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl 2xl:text-[16px]">
+                                Shubh - MVP (Official Music Video)
+                            </div>
+
+                        </div>
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/videoplayback (2).mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Dil - Lofi (Slowed + Reverb) | Raghav Chaitanya | SR Lofi
+                            </div>
+
+                        </div>
+
+                        <div class="relatedvideos  flex border  p-5 cursor-pointer    gap-3 overflow-hidden w-[100%]">
+                            <div class="w-[50%] ">
+                                <video class="rounded-lg w-full relatvideo object-fill "
+                                    src="songs/Shubh - Safety Off (Official Music Video).mp4"></video>
+                            </div>
+
+                            <div class="title w-[100%] lg:text-sm sm:text-3xl  2xl:text-[16px]">
+                                Shubh - Safety Off (Official Music Video)
+                            </div>
+
+                        </div>
+
+
+                        
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+
+
+
+
+    </div>
+
+    <div
+        class="signupwidth absolute animate-bubble  z-50 top-0 bg-transparent w-full hidden h-full  items-center justify-center my-auto">
+
+        <div class="signup border-2  bg-white rounded-lg w-[400px] h-[400px]">
+
+
+
+            <div class="signlog  flex flex-col items-center justify-center mt-6">
+                <div class="flex">
+                    <img class="w-12" src="/assets/youtube_logo-removebg-preview-BfVriw5J.png" alt="">
+                    <span class="text-3xl font-bold font-mono">Youtube </span>
+                </div>
+                <sup class="text-xs mt-1 text-slate-400 italic">(Powered by Burhan-Bugs)</sup>
+            </div>
+
+            <form id="myform" action="">
+
+                <div class="inputs flex flex-col gap-8  mt-4 items-center justify-center">
+                    <input class="w-[80%] pl-4 h-10 rounded-lg border-2 outline-2 outline-slate-300 " type="text"
+                        name="Name" id="getName" placeholder="Enter Your Name" required>
+                    <input class="w-[80%] pl-4 h-10 rounded-lg border-2 outline-2 outline-slate-300 " type="email"
+                        name="Name" id="getgmail" placeholder="Example@gmial.com" required>
+                    <input class="w-[80%] pl-4 h-10 rounded-lg border-2 outline-2 outline-slate-300 " type="password"
+                        name="Name" id="Name" placeholder="Set Password" required>
+                </div>
+
+                <div
+                    class="signupbtn w-[40%] mx-auto p-2 rounded-lg mt-7 cursor-pointer text-white font-semibold font-mono bg-[#fb0000bd] flex items-center justify-center">
+                    <input class="cursor-pointer" type="submit" value="Sign Up">
+
+
+
+
+                </div>
+
+                <p class="closebtn underline text-blue-400 text-center cursor-pointer">
+                    Remind me later
+                </p>
+
+        </div>
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
